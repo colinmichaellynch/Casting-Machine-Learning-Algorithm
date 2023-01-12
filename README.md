@@ -6,8 +6,8 @@ Implementation and Validation Novel Meta-Algorithm for Ensemble Machine Learning
 * [Supporting Documentation](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/Casting%20Meta%20Algorithm.docx)
 
 * Data
- - [Classification Results from Casting Algorithm](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/IrisAntClassification.csv)
- - [Classification Results from Reference RF and Adaboost Algorithms](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/RFandAdaboost.csv)
+  - [Classification Results from Casting Algorithm](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/IrisAntClassification.csv)
+  - [Classification Results from Reference RF and Adaboost Algorithms](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/RFandAdaboost.csv)
 
 * Code
   - [Casting Function for Classification](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/ant_ensemble_class.py)
