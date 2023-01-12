@@ -26,10 +26,30 @@ This design could allow us to optimally trade-off bias and variance. Highly comm
 
 * See [documentation](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/Casting%20Meta%20Algorithm.docx) for the math behind constructing the casting algorithm. 
 
-* 
+* We train and measure validation accuracy, bias, and variance within a grid search of hyperparameters to get a spread of these values across different levels of P between 0 and 1. 
 
+* We repeat this process for a traditional random forest and Adaboost algorithms. 
 
-![variance](https://user-images.githubusercontent.com/61156429/212184677-7e85bd78-d437-462d-ade1-74bd5e48f265.png)
-![Bias](https://user-images.githubusercontent.com/61156429/212184679-e9f210c1-f17b-4071-904d-ab4b1d0f2476.png)
-![timeelapsed](https://user-images.githubusercontent.com/61156429/212184680-ebb1d98f-1dba-4f43-b430-26fc4f9e75c7.png)
+* We also record the average time it took for each algorithm to train and then produce predictions. 
+
+## Results 
+
+* The casting algorithm (black points) produces nearly identical results to those of random forest (blue points) when P = 0 and those of Adaboost (red points) when P = 1 (t-test p-values > 0.05). In the following figures, the blue line represents a LOESS regression to show how each response variable changes over different levels of P. 
+
+Validation Variance             |  Validation Bias
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/61156429/212184677-7e85bd78-d437-462d-ade1-74bd5e48f265.png)  |  ![](https://user-images.githubusercontent.com/61156429/212184679-e9f210c1-f17b-4071-904d-ab4b1d0f2476.png)
+
+* That said, this algorithm could use some optimization, as it takes longer to train than either the random forest or Adaboost algorithms. 
+
+<p align="center">
+  <img width="575" height="330" src = https://user-images.githubusercontent.com/61156429/212184680-ebb1d98f-1dba-4f43-b430-26fc4f9e75c7.png>
+</p>
+
+* When we find the average value of bias and variance for each P, we find that an intermediate value of P () manages to minimize both vias and variance, lending some credence to the notion that this meta-algorithm could be used to improve the performance of ensemble machine learning methods. 
+
 ![Rplot](https://user-images.githubusercontent.com/61156429/212184681-61b54ea7-f00d-4a16-bc49-eff56155a80a.png)
+
+## Acknowledgements
+
+I would like to thank Ahmed Koptan and Carlos Orellana for their help in implementing this algorithm in Python. I would also like to thank [Cole Busby](https://github.com/ColeBusbyMedTech) for testing this algorithm on different datasets. 
