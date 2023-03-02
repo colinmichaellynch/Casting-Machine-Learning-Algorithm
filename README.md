@@ -22,6 +22,12 @@ Here we define a novel meta-algorithm for reconstructing serial and parallel ens
 
 This design could allow us to optimally trade-off bias and variance. Highly communicative ensembles might be more prone to bias than models with low social adhesions, as the decision of each base estimator depends on the decisions of previous estimators in the chain. Conversely, the decisions of independent networks are likely to be more variable. Intermediate networks may be able to get the best of both worlds, at least for some datasets. Here, we first validate whether or not this algorithm makes the same predictions as a random forest when P is close to 0 and as Adaboost when P = 1. If this is the case, we then determine whether or not intermediate values of P trade off bias and variance. 
 
+In the following figure, we show the hypothetical trade-off between variance and bias across differnent levels of P. When P is close to 0, the algorithm resembles a parallel ensemble. When P is 1, the algorithm produces a serial ensemble. When P is some intermediate level, then there are several independed boosted ensembles that are bagged together. The blue line shows how variance could decrease with P, whereas the red line shows how bias could increase with P. Finally, the point represented at the gold star represents an optimal trade-off between variance and bias where the total error is at a minimum. 
+
+<p align="center">
+  <img src = https://user-images.githubusercontent.com/61156429/222555925-022b729d-52ef-465c-97bb-0f4f5793a261.png>
+</p>
+
 ## Methods 
 
 * See [documentation](https://github.com/colinmichaellynch/Casting-Machine-Learning-Algorithm/blob/main/Casting%20Meta%20Algorithm.docx) for the math behind constructing the casting algorithm. 
@@ -46,7 +52,7 @@ Validation Variance             |  Validation Bias
   <img width="575" height="330" src = https://user-images.githubusercontent.com/61156429/212184680-ebb1d98f-1dba-4f43-b430-26fc4f9e75c7.png>
 </p>
 
-* When we find the average value of bias and variance for each P, we find that an intermediate value of P (0.3) manages to minimize both vias and variance, lending some credence to the notion that this meta-algorithm could be used to improve the performance of ensemble machine learning methods. 
+* When we find the average value of verification bias and variance for each P, we find that an intermediate value of P (0.3) manages to minimize both vias and variance, lending some credence to the notion that this meta-algorithm could be used to improve the performance of ensemble machine learning methods. 
 
 <p align="center">
   <img src = https://user-images.githubusercontent.com/61156429/212184681-61b54ea7-f00d-4a16-bc49-eff56155a80a.png>
